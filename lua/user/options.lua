@@ -4,8 +4,8 @@ local options = {
   cmdheight = 2,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0,                        -- so that `` is visible in markdown files
-  -- colorcolumn = "80",
-  -- colorcolumn = "120",
+  colorcolumn = "80",
+  encoding = "utf-8",
   fileencoding = "utf-8",                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
@@ -24,8 +24,8 @@ local options = {
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                        -- convert tabs to spaces
-  shiftwidth = 2,                          -- the number of spaces inserted for each indentation
-  tabstop = 2,                             -- insert 2 spaces for a tab
+  shiftwidth = 4,                          -- the number of spaces inserted for each indentation
+  tabstop = 4,                             -- insert 2 spaces for a tab
   cursorline = true,                       -- highlight the current line
   number = true,                           -- set numbered lines
   laststatus = 3,
@@ -36,6 +36,10 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  lazyredraw = true,
+  foldmethod = "expr",
+  foldexpr = "nvim_treesitter#foldexpr()",
+  foldenable = false,
 }
 
 vim.opt.shortmess:append "c"

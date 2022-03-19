@@ -141,7 +141,7 @@ local mappings = {
   },
 
   f = {
-    name = "Fin",
+    name = "Find",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     f = {
