@@ -7,6 +7,9 @@ vim.cmd([[
     augroup END
 ]])
 
+-- dap
+require('dap-go').setup()
+
 return {
     cmd = { "gopls" }
 }

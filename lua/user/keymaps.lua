@@ -75,15 +75,23 @@ keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
 keymap("n", "<F3>", ":e .<cr>", opts)
 keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
-keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
-keymap(
-  "n",
-  "<F6>",
-  [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
-  opts
-)
-keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
-keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
+-- keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
+-- keymap(
+--   "n",
+--   "<F6>",
+--   [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
+--   opts
+-- )
+-- keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
+-- keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
+
+-- DAP
+keymap("n", "<F5>", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<F6>", ":lua require'dap'.continue()<CR>", opts)
+keymap("n", "<F7>", ":lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<F8>", ":lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<F9>", ":lua require'dap'.repl.open()<CR>", opts)
+--
 keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
