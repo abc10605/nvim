@@ -45,7 +45,7 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "numToStr/Comment.nvim"
+  use { "numToStr/Comment.nvim", commit = "0aaea32f27315e2a99ba4c12ab9def5cbb4842e4" }
   use "kyazdani42/nvim-web-devicons"
   use { "kyazdani42/nvim-tree.lua", commit = "f183c7f31197ae499c3420341fb8b275636a49b8" }
   use "akinsho/bufferline.nvim"
@@ -74,7 +74,7 @@ return packer.startup(function(use)
   use "lunarvim/vim-solidity"
   use "Mephistophiles/surround.nvim"
   use "tpope/vim-repeat"
-  use "Shatur/neovim-session-manager"
+  use { "Shatur/neovim-session-manager", commit = "2d42185c859907ab600dd2d0ebd8d1764eec5b58" }
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
   -- use "metakirby5/codi.vim"
@@ -182,8 +182,10 @@ return packer.startup(function(use)
   use "theHamsta/nvim-dap-virtual-text"
   use "rcarriga/nvim-dap-ui"
   use {
-      'leoluz/nvim-dap-go',
-      config = require('dap-go').setup()
+      "leoluz/nvim-dap-go",
+      config = function()
+          require('dap-go').setup()
+      end
   }
   use "Pocco81/DAPInstall.nvim"
 
