@@ -143,7 +143,8 @@ local mappings = {
   f = {
     name = "Find",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    -- c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    c = { "<cmd>Telescope commands<cr>", "Commands" },
     f = {
       "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
       "Find files",
@@ -156,7 +157,7 @@ local mappings = {
     r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
+    -- C = { "<cmd>Telescope commands<cr>", "Commands" },
     t = { "<cmd>TodoTelescope<CR>", "TODOS"}
   },
 
@@ -235,19 +236,19 @@ local mappings = {
   },
 
   S = {
-    -- name = "Session",
-    -- s = { "<cmd>SaveSession<cr>", "Save" },
-    -- l = { "<cmd>LoadLastSession!<cr>", "Load Last" },
-    -- d = { "<cmd>LoadCurrentDirSession!<cr>", "Load Last Dir" },
-    -- f = { "<cmd>Telescope sessions save_current=false<cr>", "Find Session" },
-    name = "SnipRun",
-    c = { "<cmd>SnipClose<cr>", "Close" },
-    f = { "<cmd>%SnipRun<cr>", "Run File" },
-    i = { "<cmd>SnipInfo<cr>", "Info" },
-    m = { "<cmd>SnipReplMemoryClean<cr>", "Mem Clean" },
-    r = { "<cmd>SnipReset<cr>", "Reset" },
-    t = { "<cmd>SnipRunToggle<cr>", "Toggle" },
-    x = { "<cmd>SnipTerminate<cr>", "Terminate" },
+    name = "Session",
+    s = { "<cmd>SessionManager save_current_session<cr>", "Save" },
+    l = { "<cmd>SessionManager load_last_session<cr>", "Load Last" },
+    d = { "<cmd>SessionManager load_current_dir_session<cr>", "Load Last Dir" },
+    f = { "<cmd>SessionManager load_session<cr>", "Find Session" },
+    -- name = "SnipRun",
+    -- c = { "<cmd>SnipClose<cr>", "Close" },
+    -- f = { "<cmd>%SnipRun<cr>", "Run File" },
+    -- i = { "<cmd>SnipInfo<cr>", "Info" },
+    -- m = { "<cmd>SnipReplMemoryClean<cr>", "Mem Clean" },
+    -- r = { "<cmd>SnipReset<cr>", "Reset" },
+    -- t = { "<cmd>SnipRunToggle<cr>", "Toggle" },
+    -- x = { "<cmd>SnipTerminate<cr>", "Terminate" },
   },
 
   t = {
