@@ -34,6 +34,11 @@ vim.cmd [[
     autocmd!
     autocmd VimEnter * hi link illuminatedWord LspReferenceText
   augroup END
+
+  augroup lualine
+    autocmd!
+    autocmd VimEnter * lua require('lualine').setup()
+  augroup END
 ]]
 -- autocmd BufLeave * if (!exists('b:caret')) | let b:caret = winsaveview() | endif
 -- autocmd BufEnter * if (exists('b:caret')) | call winrestview(b:caret) | endif
