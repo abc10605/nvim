@@ -73,7 +73,8 @@ return packer.startup(function(use)
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
   use "lunarvim/vim-solidity"
-  use "Mephistophiles/surround.nvim"
+  -- use "Mephistophiles/surround.nvim"
+  use "tpope/vim-surround"
   use "tpope/vim-repeat"
   use { "Shatur/neovim-session-manager" }
         -- , commit = "2d42185c859907ab600dd2d0ebd8d1764eec5b58" }
