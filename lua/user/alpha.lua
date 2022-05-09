@@ -28,16 +28,15 @@ dashboard.section.buttons.val = {
   dashboard.button("c", icons.ui.Gear .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
   dashboard.button("q", icons.diagnostics.Error .. " Quit", ":qa<CR>"),
 }
-local function footer()
-  -- NOTE: requires the fortune-mod package to work
-  -- local handle = io.popen("fortune")
-  -- local fortune = handle:read("*a")
-  -- handle:close()
-  -- return fortune
-  return "chrisatmachine.com"
-end
 
-dashboard.section.footer.val = footer()
+function Dashboard_footer()
+---@diagnostic disable-next-line: undefined-global
+  local plugins = #vim.tbl_keys(packer_plugins)
+  local v = vim.version()
+  local datetime = os.date " %Y-%m-%d   %H:%M:%S"
+  local platform = vim.fn.has "win32" == 1 and "" or ""
+  dashboard.section.footer.val = string.format(" %d   v%d.%d.%d %s  %s", plugins, v.major, v.minor, v.patch, platform, datetime)
+end
 
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"

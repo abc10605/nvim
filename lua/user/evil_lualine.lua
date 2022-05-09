@@ -1,3 +1,4 @@
+---@diagnostic disable: duplicate-index
 -- Eviline config for lualine
 -- Author: shadmansaleh
 -- Credit: glepnir
