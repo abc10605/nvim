@@ -28,7 +28,7 @@ vim.cmd [[
   augroup _alpha
     autocmd!
     autocmd BufWinEnter * lua Dashboard_footer()
-    autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
+    autocmd User AlphaReady set showtabline=0 | set laststatus=0 | autocmd BufUnload <buffer> set showtabline=2 | set laststatus=2
   augroup end
 
   augroup illuminate_augroup
