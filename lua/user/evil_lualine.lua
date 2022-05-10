@@ -216,6 +216,15 @@ ins_right {
 }
 
 ins_right {
+  function ()
+    local time = os.date "%H:%M"
+    return time
+  end,
+  icon = '',
+  color = { fg = colors.yellow }
+}
+
+ins_right {
   function()
     return '▊'
   end,
