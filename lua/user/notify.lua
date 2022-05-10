@@ -5,6 +5,8 @@ end
 
 local icons = require "user.icons"
 
+require("telescope").load_extension "notify"
+
 notify.setup {
   -- Animation style (see below for details)
   stages = "fade_in_slide_out",
@@ -19,7 +21,7 @@ notify.setup {
   render = "default",
 
   -- Default timeout for notifications
-  timeout = 2000,
+  timeout = 5000,
 
   -- For stages that change opacity this is treated as the highlight behind the window
   -- Set this to either a highlight group or an RGB hex value e.g. "#000000"
