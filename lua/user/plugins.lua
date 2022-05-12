@@ -193,6 +193,38 @@ return packer.startup(function(use)
   }
   use "Pocco81/DAPInstall.nvim"
 
+  -- Other
+  use {
+    "nvim-neorg/neorg",
+    -- tag = "latest",
+    config = function()
+      require('neorg').setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.norg.dirman"] = {
+            config = {
+              workspaces = {
+                work = "~/notes/work",
+                home = "~/notes/home",
+              }
+            }
+          },
+          ["core.norg.concealer"] = {},
+          ["core.norg.completion"] = {
+            config = {
+              engine = "nvim-cmp",
+            },
+          },
+          ["core.norg.qol.toc"] = {
+            config = {
+              toc_split_placement = "right",
+            }
+          },
+        }
+      }
+    end,
+    requires = "nvim-lua/plenary.nvim",
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
