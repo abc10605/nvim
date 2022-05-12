@@ -33,7 +33,7 @@ cmp.setup {
   window = {
     documentation = cmp.config.window.bordered( "╭", "─", "╮", "│", "╯", "─", "╰", "│" ),
   },
-  mapping = {
+  mapping = cmp.mapping.preset.insert {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
@@ -125,6 +125,6 @@ cmp.setup {
   -- },
   experimental = {
     ghost_text = true,
-    native_menu = false,
+    -- native_menu = false,
   },
 }
