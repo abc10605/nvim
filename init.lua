@@ -47,4 +47,5 @@ require "user.copilot"
 require "user.gps"
 require "user.illuminate"
 require "user.dap_conf"
+require "user.venn"
 vim.opt.laststatus = 3
