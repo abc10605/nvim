@@ -3,14 +3,14 @@ vim.api.nvim_create_autocmd({ "User" }, {
   pattern = { "AlphaReady" },
   callback = function()
     vim.cmd [[
-      set showtabline=0 | set laststatus=0 | autocmd BufUnload <buffer> set showtabline=2 | set laststatus=2
+      set showtabline=0 | set laststatus=0 | autocmd BufUnload <buffer> set showtabline=2 | set laststatus=3
     ]]
   end,
 })
 
 -- close specific window(buffer) with q key
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel" },
+  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "notify" },
   callback = function()
     vim.cmd [[
       nnoremap <silent> <buffer> q :close<CR> 
