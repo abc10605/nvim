@@ -74,14 +74,11 @@ return packer.startup(function(use)
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
   use "lunarvim/vim-solidity"
-  -- use "Mephistophiles/surround.nvim"
   use "tpope/vim-surround"
   use "tpope/vim-repeat"
-  use { "Shatur/neovim-session-manager" }
-        -- , commit = "2d42185c859907ab600dd2d0ebd8d1764eec5b58" }
+  use "Shatur/neovim-session-manager"
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
-  -- use "metakirby5/codi.vim"
   use "nyngwang/NeoZoom.lua"
   use "SmiteshP/nvim-gps"
   use { "michaelb/sniprun", run = "bash ./install.sh" }
@@ -97,11 +94,9 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "rose-pine/neovim"
   use "projekt0n/github-nvim-theme"
-  -- use "rebelot/kanagawa.nvim"
 
   -- cmp plugins
-  use { "hrsh7th/nvim-cmp" }
-        -- , commit = "d93104244c3834fbd8f3dd01da9729920e0b5fe7" } -- The completion plugin
+  use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -129,7 +124,6 @@ return packer.startup(function(use)
     run = "./install.sh",
     requires = "hrsh7th/nvim-cmp",
   }
-  -- use 'David-Kunz/cmp-npm' -- doesn't seem to work
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine

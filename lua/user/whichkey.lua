@@ -138,7 +138,7 @@ local mappings = {
     t = { "<cmd>Neorg toc split<cr>", "TOC" },
     c = { "<cmd>Neorg toc close<cr>", "Close" },
     m = { "<cmd>Neorg inject-metadata<cr>", "Inject Metadata" },
-    },
+  },
 
   r = {
     name = "Replace",
@@ -167,7 +167,7 @@ local mappings = {
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     -- C = { "<cmd>Telescope commands<cr>", "Commands" },
-    t = { "<cmd>TodoTelescope<CR>", "TODOS"}
+    t = { "<cmd>TodoTelescope<CR>", "TODOS" }
   },
 
   g = {

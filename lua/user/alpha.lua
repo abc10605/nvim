@@ -24,17 +24,6 @@ dashboard.section.header.val = {
   [[..         G#E        tt       t      t           E#t ...      #G      .. ]],
   [[            fE                                    ,;.          j          ]],
   [[             ,                                                            ]],
-  -- [[                                                 ]],
-  -- [[                                                 ]],
-  -- [[                                                 ]],
-  -- [[                                                 ]],
-  -- [[                                                 ]],
-  -- [[                               __                ]],
-  -- [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-  -- [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-  -- [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-  -- [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-  -- [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 }
 dashboard.section.buttons.val = {
   dashboard.button("f", " " .. icons.documents.Files .. "  Find file", ":Telescope find_files <CR>"),
@@ -53,12 +42,19 @@ dashboard.section.buttons.val = {
 }
 
 function Dashboard_footer()
----@diagnostic disable-next-line: undefined-global
+  ---@diagnostic disable-next-line: undefined-global
   local plugins = #vim.tbl_keys(packer_plugins)
   local v = vim.version()
   local datetime = os.date " %Y-%m-%d   %H:%M"
   local platform = vim.fn.has "win32" == 1 and " Windows" or " Unix"
-  dashboard.section.footer.val = string.format(" %d   v%d.%d.%d  %s  %s", plugins, v.major, v.minor, v.patch, platform, datetime)
+  local str = string.format(
+    " %d Plugins    v%d.%d.%d   %s   %s",
+    plugins,
+    v.major, v.minor, v.patch,
+    platform,
+    datetime
+  )
+  dashboard.section.footer.val = { string.format("", #str), str }
 end
 
 dashboard.section.footer.opts.hl = "Type"
@@ -66,5 +62,4 @@ dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Keyword"
 
 dashboard.opts.opts.noautocmd = true
--- vim.cmd([[autocmd User AlphaReady echo 'ready']])
 alpha.setup(dashboard.opts)
