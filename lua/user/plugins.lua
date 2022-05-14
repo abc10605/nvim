@@ -86,7 +86,6 @@ return packer.startup(function(use)
   use "SmiteshP/nvim-gps"
   use { "michaelb/sniprun", run = "bash ./install.sh" }
   use {
-
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
     ft = "markdown",
@@ -97,6 +96,7 @@ return packer.startup(function(use)
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "rose-pine/neovim"
+  use "projekt0n/github-nvim-theme"
   -- use "rebelot/kanagawa.nvim"
 
   -- cmp plugins
@@ -201,6 +201,12 @@ return packer.startup(function(use)
     requires = "nvim-lua/plenary.nvim",
   }
   use "jbyuki/venn.nvim"
+  use { 
+    "lukas-reineke/virt-column.nvim",
+    config = function()
+        require("virt-column").setup()
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
