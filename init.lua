@@ -49,3 +49,4 @@ require "user.illuminate"
 require "user.dap_conf"
 require "user.venn"
 vim.opt.laststatus = 3
+require "user.neorg"
