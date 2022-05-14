@@ -46,6 +46,7 @@ vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   callback = function()
     vim.cmd "set formatoptions-=cro"
+    Dashboard_footer()
   end,
 })
 
