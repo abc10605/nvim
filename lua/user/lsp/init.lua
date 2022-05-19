@@ -1,4 +1,6 @@
-require("nvim-lsp-installer").setup {}
+require("nvim-lsp-installer").setup {
+  automatic_installation = true,
+}
 
 local status_ok, lspconfig = pcall(require, "lspconfig")
 if not status_ok then
