@@ -111,7 +111,22 @@ keymap("n", "<c-n>", ":e ~/Notes/<cr>", opts)
 -- keymap("n", "c*", [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]], opts)
 -- keymap("n", "c#", [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]], opts)
 -- keymap("n", "gx", [[:execute '!brave ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
-keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+-- keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 -- Change '<CR>' to whatever shortcut you like :)
 -- vim.api.nvim_set_keymap('n', '<CR>', '<cmd>NeoZoomToggle<CR>', { noremap=true, silent=true, nowait=true })
 keymap("i", "<S-cr>", "<ESC>o", opts)
+
+-- Open url
+function HandleURL()
+  local ignore = '[^ >,;()"]*'
+  local uri = vim.fn.matchstr(vim.fn.getline("."), '[a-z]*://' .. ignore)
+  local github = vim.fn.matchstr(vim.fn.getline("."), 'github.com/' .. ignore .. '/' .. ignore)
+  if uri ~= "" then
+    vim.cmd('silent !open "' .. uri .. '"')
+  elseif github ~= "" then
+    vim.cmd('silent !open "https://' .. github .. '"')
+  else
+    print("No URL found")
+  end
+end
+keymap("n", "gx", "<cmd>lua HandleURL()<cr>", opts)
