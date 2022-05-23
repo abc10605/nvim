@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd({ "User" }, {
 
 -- close specific window(buffer) with q key
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "notify" },
+  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "notify", "dap-float" },
   callback = function()
     vim.cmd [[
       nnoremap <silent> <buffer> q :close<CR> 
@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- git markdown wrap and spellcheck
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "gitcommit", "markdown" },
+  pattern = { "gitcommit", "markdown", "norg" },
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true

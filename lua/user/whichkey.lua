@@ -147,6 +147,24 @@ local mappings = {
     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
   },
 
+  d = {
+    name = "Debugger",
+    b = {
+      name = "Breakpoint",
+      c = { "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", "Conditional" },
+      C = { "<cmd>lua require('dap').clear_breakpoints()<cr>", "Clear" },
+      l = { "<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", "Log" },
+      L = { "<cmd>lua require('dap').list_breakpoints()<cr>", "List" },
+
+    },
+    c = { "<cmd>lua require('dap').run_to_cursor()<cr>", "Run to cursor" },
+    h = { "<cmd>lua require('dap.ui.widgets').hover()<cr>", "Hover" },
+    l = { "<cmd>lua require('dap').run_last()<cr>", "Run last" },
+    r = { "<cmd>lua require('dap').step_back()<cr>", "Step back"},
+    R = { "<cmd>lua require('dap').reverse_continue()<cr>", "Reverse continue"},
+    t = { "<cmd>lua require('dap').terminate()<cr>", "Terminate" },
+  },
+
   f = {
     name = "Find",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },

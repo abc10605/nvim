@@ -12,6 +12,9 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapStopped', {text='👉', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapBreakpointCondition', {text='🌟', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapLogPoint', {text='ℹ️', texthl='', linehl='', numhl=''})
 
 -- nvim-dap-ui
 dapui.setup({
@@ -57,7 +60,7 @@ dapui.setup({
     },
   },
   windows = { indent = 1 },
-  render = { 
+  render = {
     max_type_length = nil, -- Can be integer or nil.
   }
 })
@@ -70,8 +73,8 @@ require("nvim-dap-virtual-text").setup {
     highlight_new_as_changed = false,      -- highlight new variables in the same way as changed variables (if highlight_changed_variables)
     show_stop_reason = true,               -- show stop reason when stopped for exceptions
     commented = false,                     -- prefix virtual text with comment string
-    only_first_definition = true,          -- only show virtual text at first definition (if there are multiple)
     all_references = false,                -- show virtual text on all all references of the variable (not only definitions)
+    only_first_definition = false,          -- only show virtual text at first definition (if there are multiple)
     filter_references_pattern = '<module', -- filter references (not definitions) pattern when all_references is activated (Lua gmatch pattern, default filters out Python modules)
     -- experimental features:
     virt_text_pos = 'eol',                 -- position of virtual text, see `:h nvim_buf_set_extmark()`

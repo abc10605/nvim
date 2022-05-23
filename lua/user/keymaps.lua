@@ -90,7 +90,7 @@ keymap("n", "<F5>", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
 keymap("n", "<F6>", ":lua require'dap'.continue()<CR>", opts)
 keymap("n", "<F7>", ":lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<F8>", ":lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<F9>", ":lua require'dap'.repl.open()<CR>", opts)
+keymap("n", "<F9>", ":lua require'dap'.step_out()<CR>", opts)
 --
 keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
