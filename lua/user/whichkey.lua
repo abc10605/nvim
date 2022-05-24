@@ -298,6 +298,14 @@ local mappings = {
     h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
     p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
   },
+
+  u = {
+    name = "PlantUML",
+    o = { "<cmd>PlantumlOpen<cr>", "Open in browser" },
+    s = { "<cmd>PlantumlStart<cr>", "Start" },
+    t = { "<cmd>PlantumlStop<cr>", "Terminate" },
+    S = { "<cmd>PlantumlSave<cr>", "Save"},
+  }
 }
 
 local vopts = {
