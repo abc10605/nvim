@@ -68,3 +68,17 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
     vim.cmd "hi link illuminatedWord LspReferenceText"
   end,
 })
+
+-- PlantUML
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "plantuml" },
+  callback = function()
+    vim.cmd [[
+      let g:plantuml_previewer#plantuml_jar_path = get(
+      \  matchlist(system('cat `which plantuml` | grep plantuml.jar'), '\v.*\s[''"]?(\S+plantuml\.jar).*'),
+      \  1,
+      \  0
+      \)
+    ]]
+  end,
+})

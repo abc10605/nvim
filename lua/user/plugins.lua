@@ -195,11 +195,20 @@ return packer.startup(function(use)
     requires = "nvim-lua/plenary.nvim",
   }
   use "jbyuki/venn.nvim"
-  use { 
+  use {
     "lukas-reineke/virt-column.nvim",
     config = function()
         require("virt-column").setup()
     end
+  }
+
+  use {
+    "weirongxu/plantuml-previewer.vim",
+    ft = { "plantuml" },
+    requires = {
+      "tyru/open-browser.vim",
+      "aklt/plantuml-syntax",
+    },
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
