@@ -36,8 +36,8 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+keymap("n", "<A-j>", ":m .+1<CR>==", opts)
+keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -92,8 +92,8 @@ keymap("n", "<F7>", ":lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<F8>", ":lua require'dap'.step_into()<CR>", opts)
 keymap("n", "<F9>", ":lua require'dap'.step_out()<CR>", opts)
 --
-keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+-- keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+-- keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
 keymap(
   "n",

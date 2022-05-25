@@ -159,6 +159,7 @@ local mappings = {
     },
     c = { "<cmd>lua require('dap').run_to_cursor()<cr>", "Run to cursor" },
     h = { "<cmd>lua require('dap.ui.widgets').hover()<cr>", "Hover" },
+    j = { "<cmd>lua require('dap.ext.vscode').load_launchjs()<cr>", "Load launchjs"},
     l = { "<cmd>lua require('dap').run_last()<cr>", "Run last" },
     r = { "<cmd>lua require('dap').step_back()<cr>", "Step back"},
     R = { "<cmd>lua require('dap').reverse_continue()<cr>", "Reverse continue"},
