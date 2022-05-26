@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd({ "User" }, {
 
 -- close specific window(buffer) with q key
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "notify", "dap-float" },
+  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "notify", "dap-float", "dbout" },
   callback = function()
     vim.cmd [[
       nnoremap <silent> <buffer> q :close<CR> 
@@ -81,4 +81,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
       \)
     ]]
   end,
+})
+
+-- dadbod-completion
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "sql", "mysql", "plsql" },
+  callback = function ()
+    require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+  end
 })

@@ -211,6 +211,19 @@ return packer.startup(function(use)
     },
   }
 
+  -- Database
+  use {
+    "kristijanhusak/vim-dadbod-completion",
+    requires = { "tpope/vim-dadbod" },
+  }
+  use {
+    "kristijanhusak/vim-dadbod-ui",
+    config = function ()
+      vim.g.db_ui_show_database_icon = 1
+      vim.g.db_ui_use_nerd_fonts = 1
+    end
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
