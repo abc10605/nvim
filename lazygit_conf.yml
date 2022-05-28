@@ -1,0 +1,10 @@
+gui:
+  mainPanelSplitMode: 'horizontal'
+  expandFocusedSidePanel: true
+  showIcons: true
+  language: 'en'
+git:
+  parseEmoji: true
+os:
+  editCommand: 'nvim'
+  editCommandTemplate: '{{editor}} +{{line}} -- {{filename}}'
