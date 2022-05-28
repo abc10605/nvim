@@ -3,7 +3,7 @@ function _G.Toggle_venn()
     local venn_enabled = vim.inspect(vim.b.venn_enabled)
     if venn_enabled == "nil" then
         vim.b.venn_enabled = true
-        vim.notify("Venn is enabled!")
+        vim.notify("Enabled", "info", { title = "venn" })
         vim.cmd [[setlocal ve=all]]
         -- draw a line on HJKL keystokes
         vim.api.nvim_buf_set_keymap(0, "n", "J", "<C-v>j:VBox<CR>", { noremap = true })
@@ -16,7 +16,7 @@ function _G.Toggle_venn()
         vim.cmd [[setlocal ve=]]
         vim.cmd [[mapclear <buffer>]]
         vim.b.venn_enabled = nil
-        vim.notify("Venn is disabled!")
+        vim.notify("Disabled", "info", { title = "venn" })
     end
 end
 
