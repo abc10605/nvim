@@ -3,14 +3,12 @@ if not status_ok then
 	return
 end
 
-vim.cmd([[
-  nmap <C-a> <Plug>(dial-increment)
-  nmap <C-x> <Plug>(dial-decrement)
-  vmap <C-a> <Plug>(dial-increment)
-  vmap <C-x> <Plug>(dial-decrement)
-  vmap g<C-a> <Plug>(dial-increment-additional)
-  vmap g<C-x> <Plug>(dial-decrement-additional)
-  ]])
+vim.api.nvim_set_keymap("n", "<C-a>", require("dial.map").inc_normal(), {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-x>", require("dial.map").dec_normal(), {noremap = true})
+vim.api.nvim_set_keymap("v", "<C-a>", require("dial.map").inc_visual(), {noremap = true})
+vim.api.nvim_set_keymap("v", "<C-x>", require("dial.map").dec_visual(), {noremap = true})
+vim.api.nvim_set_keymap("v", "g<C-a>", require("dial.map").inc_gvisual(), {noremap = true})
+vim.api.nvim_set_keymap("v", "g<C-x>", require("dial.map").dec_gvisual(), {noremap = true})
 
 dial.augends["custom#boolean"] = dial.common.enum_cyclic({
 	name = "boolean",
