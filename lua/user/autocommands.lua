@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd({ "User" }, {
 
 -- close specific window(buffer) with q key
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "notify", "dap-float", "dbout" },
+  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "notify", "dap-float", "dbout", "tsplayground" },
   callback = function()
     vim.cmd [[
       nnoremap <silent> <buffer> q :close<CR> 
