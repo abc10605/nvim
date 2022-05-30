@@ -1,24 +1,47 @@
-local status_ok, dial = pcall(require, "dial")
+local status_ok, augend = pcall(require, "dial.augend")
 if not status_ok then
 	return
 end
 
-vim.api.nvim_set_keymap("n", "<C-a>", require("dial.map").inc_normal(), {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-x>", require("dial.map").dec_normal(), {noremap = true})
-vim.api.nvim_set_keymap("v", "<C-a>", require("dial.map").inc_visual(), {noremap = true})
-vim.api.nvim_set_keymap("v", "<C-x>", require("dial.map").dec_visual(), {noremap = true})
-vim.api.nvim_set_keymap("v", "g<C-a>", require("dial.map").inc_gvisual(), {noremap = true})
-vim.api.nvim_set_keymap("v", "g<C-x>", require("dial.map").dec_gvisual(), {noremap = true})
+local status_ok_2, dial = pcall(require, "dial.config")
+if not status_ok_2 then
+	return
+end
 
-dial.augends["custom#boolean"] = dial.common.enum_cyclic({
-	name = "boolean",
-	strlist = { "true", "false" },
-})
-table.insert(dial.config.searchlist.normal, "custom#boolean")
+local status_ok_3, keymap = pcall(require, "dial.map")
+if not status_ok_3 then
+	return
+end
 
--- For Languages which prefer True/False, e.g. python.
-dial.augends["custom#Boolean"] = dial.common.enum_cyclic({
-	name = "Boolean",
-	strlist = { "True", "False" },
-})
-table.insert(dial.config.searchlist.normal, "custom#Boolean")
+vim.api.nvim_set_keymap("n", "<C-a>", keymap.inc_normal(), {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-x>", keymap.dec_normal(), {noremap = true})
+vim.api.nvim_set_keymap("v", "<C-a>", keymap.inc_visual(), {noremap = true})
+vim.api.nvim_set_keymap("v", "<C-x>", keymap.dec_visual(), {noremap = true})
+vim.api.nvim_set_keymap("v", "g<C-a>", keymap.inc_gvisual(), {noremap = true})
+vim.api.nvim_set_keymap("v", "g<C-x>", keymap.dec_gvisual(), {noremap = true})
+
+local default = {
+  augend.integer.alias.decimal,
+  augend.integer.alias.hex,
+  augend.date.alias["%Y/%m/%d"],
+  augend.date.alias["%Y-%m-%d"],
+  augend.date.alias["%m/%d"],
+  augend.date.alias["%H:%M"],
+  augend.constant.alias.bool,
+  augend.constant.new{
+    elements = { "&&", "||" },
+    word = false,
+    cyclic = true,
+  }
+}
+
+dial.augends:register_group{
+  default = default,
+  python = {
+    augend.constant.new{
+      elements = { "True", "False" },
+      word = true,
+      cyclic = true,
+    },
+  }
+}
