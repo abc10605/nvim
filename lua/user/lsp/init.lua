@@ -38,7 +38,7 @@ lspconfig.pyright.setup {
 -- solang
 -- local solang_opts = require "user.lsp.settings.solang"
 -- lspconfig.solang.setup {
-  -- opts = vim.tbl_deep_extend("force", solang_opts, g_opts)
+-- opts = vim.tbl_deep_extend("force", solang_opts, g_opts)
 -- }
 
 -- emmet_ls
@@ -53,7 +53,7 @@ lspconfig.emmet_ls.setup {
 -- solc
 -- local solc_opts = require "user.lsp.settings.solc"
 -- lspconfig.solc.setup {
-  -- opts = vim.tbl_deep_extend("force", solc_opts, g_opts)
+-- opts = vim.tbl_deep_extend("force", solc_opts, g_opts)
 -- }
 
 -- gopls

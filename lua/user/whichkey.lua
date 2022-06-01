@@ -160,10 +160,10 @@ local mappings = {
     },
     c = { "<cmd>lua require('dap').run_to_cursor()<cr>", "Run to cursor" },
     h = { "<cmd>lua require('dap.ui.widgets').hover()<cr>", "Hover" },
-    j = { "<cmd>lua require('dap.ext.vscode').load_launchjs()<cr>", "Load launchjs"},
+    j = { "<cmd>lua require('dap.ext.vscode').load_launchjs()<cr>", "Load launchjs" },
     l = { "<cmd>lua require('dap').run_last()<cr>", "Run last" },
-    r = { "<cmd>lua require('dap').step_back()<cr>", "Step back"},
-    R = { "<cmd>lua require('dap').reverse_continue()<cr>", "Reverse continue"},
+    r = { "<cmd>lua require('dap').step_back()<cr>", "Step back" },
+    R = { "<cmd>lua require('dap').reverse_continue()<cr>", "Reverse continue" },
     t = { "<cmd>lua require('dap').terminate()<cr>", "Terminate" },
   },
 
@@ -306,7 +306,7 @@ local mappings = {
     o = { "<cmd>PlantumlOpen<cr>", "Open in browser" },
     s = { "<cmd>PlantumlStart<cr>", "Start" },
     t = { "<cmd>PlantumlStop<cr>", "Terminate" },
-    S = { "<cmd>PlantumlSave<cr>", "Save"},
+    S = { "<cmd>PlantumlSave<cr>", "Save" },
   }
 }
 

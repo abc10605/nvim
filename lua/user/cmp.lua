@@ -31,7 +31,7 @@ cmp.setup {
     end,
   },
   window = {
-    documentation = cmp.config.window.bordered( "╭", "─", "╮", "│", "╯", "─", "╰", "│" ),
+    documentation = cmp.config.window.bordered("╭", "─", "╮", "│", "╯", "─", "╰", "│"),
   },
   mapping = cmp.mapping.preset.insert {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -132,7 +132,7 @@ cmp.setup {
 -- dadbod-completion
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "sql", "mysql", "plsql" },
-  callback = function ()
-    require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+  callback = function()
+    require('cmp').setup.buffer({ sources = { { name = 'vim-dadbod-completion' } } })
   end
 })

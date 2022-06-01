@@ -1,6 +1,6 @@
 local status_ok, session_manager = pcall(require, "session_manager")
 if not status_ok then
-	return
+  return
 end
 
 -- local Path = require('plenary.path')
@@ -16,11 +16,10 @@ session_manager.setup({
 
 local tele_status_ok, telescope = pcall(require, "telescope")
 if not tele_status_ok then
-	return
+  return
 end
 
-local tele_session_status_ok, telescope = pcall(telescope.load_extension, "sessions")
+local tele_session_status_ok, _ = pcall(telescope.load_extension, "sessions")
 if not tele_session_status_ok then
-	return
+  return
 end
-

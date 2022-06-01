@@ -129,4 +129,5 @@ function HandleURL()
     print("No URL found")
   end
 end
+
 keymap("n", "gx", "<cmd>lua HandleURL()<cr>", opts)

@@ -46,10 +46,10 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim" }
-    --, commit = "0aaea32f27315e2a99ba4c12ab9def5cbb4842e4" }
+  --, commit = "0aaea32f27315e2a99ba4c12ab9def5cbb4842e4" }
   use "kyazdani42/nvim-web-devicons"
   use { "kyazdani42/nvim-tree.lua" }
-        -- commit = "f183c7f31197ae499c3420341fb8b275636a49b8" }
+  -- commit = "f183c7f31197ae499c3420341fb8b275636a49b8" }
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
@@ -160,7 +160,7 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
-  use {'p00f/nvim-ts-rainbow'}
+  use { 'p00f/nvim-ts-rainbow' }
   -- use {'christianchiarulli/nvim-ts-rainbow'}
   use "nvim-treesitter/playground"
   use "windwp/nvim-ts-autotag"
@@ -180,10 +180,10 @@ return packer.startup(function(use)
   use "theHamsta/nvim-dap-virtual-text"
   use "rcarriga/nvim-dap-ui"
   use {
-      "leoluz/nvim-dap-go",
-      config = function()
-          require('dap-go').setup()
-      end
+    "leoluz/nvim-dap-go",
+    config = function()
+      require('dap-go').setup()
+    end
   }
   use "Pocco81/DAPInstall.nvim"
 
@@ -197,7 +197,7 @@ return packer.startup(function(use)
   use {
     "lukas-reineke/virt-column.nvim",
     config = function()
-        require("virt-column").setup()
+      require("virt-column").setup()
     end
   }
 
@@ -217,7 +217,7 @@ return packer.startup(function(use)
   }
   use {
     "kristijanhusak/vim-dadbod-ui",
-    config = function ()
+    config = function()
       vim.g.db_ui_show_database_icon = 1
       vim.g.db_ui_use_nerd_fonts = 1
     end

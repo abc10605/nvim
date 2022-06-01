@@ -8,5 +8,5 @@ vim.cmd([[
 ]])
 
 return {
-    cmd = { "gopls" }
+  cmd = { "gopls" }
 }

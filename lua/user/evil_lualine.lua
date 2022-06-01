@@ -47,7 +47,7 @@ local config = {
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
-    disabled_filetypes = {'alpha', 'dashboard'}
+    disabled_filetypes = { 'alpha', 'dashboard' }
   },
   sections = {
     -- these are to remove the defaults
@@ -216,7 +216,7 @@ ins_right {
 }
 
 ins_right {
-  function ()
+  function()
     local time = os.date "%H:%M"
     return time
   end,
